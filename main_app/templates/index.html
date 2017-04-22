@@ -1,0 +1,52 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link href="{% static 'css/bootstrap.min.css'%}" rel="stylesheet">
+    <link href="{% static 'css/style.css'%}" rel="stylesheet">1
+    <link href="{% static 'js/bootstrap.min.js' %}" rel="stylesheet">
+    <title>pyBrew</title>
+  </head>
+  <body>
+
+    <div class="sidebar">
+      <ul class="nav nav-pills nav-stacked">
+        <li><a href="#">Link 1   <span class="glyphicon glyphicon-dashboard"></span></a></li>
+      </ul>
+
+
+    </div>
+
+    <br/>
+
+    <div class="container" id="principal-container">
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">
+            <img id="logo" alt="Brand" src="{% static 'images/label-beer-bottle-icon.svg' %}">
+          </a>
+        </div>
+
+        <button type="button" class="btn btn-default navbar-btn">Sign in</button>
+
+      </div>
+    </nav>
+
+    {% for treasure in treasures %}
+
+    <div class="card card-2">
+      <div class="container">
+        <h1>{{ treasure.name }}</h1>
+        <h2>{{ treasure.value }}</h2>
+      </div>
+    </div>
+
+    {% endfor %}
+
+    </div>
+  </body>
+</html>
